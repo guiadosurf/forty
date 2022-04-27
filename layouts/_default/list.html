@@ -16,7 +16,7 @@
                     <div class="inner">
 			{{ if .Params.image }}
                         <span class="image">
-                            <img src="{{ .Site.Params.baseURL }}/img/{{ .Params.image }}" alt="" />
+                            <img src="{{ .Page.RelPermalink }}img/banner.jpg" alt="" />
                         </span>
 			{{ end }}
                         <header class="major">
@@ -32,7 +32,7 @@
                     {{ range .Pages }}
                     <section>
                         <a href="{{ .Permalink }}" class="image">
-							<img src="{{ .Site.Params.baseURL }}/img/{{ .Section }}/{{ .Params.image }}" alt="" data-position="center center" />
+							<img src="{{ .RelPermalink }}img/banner.jpg" alt="" data-position="center center" />
 						</a>
                         <div class="content">
                             <div class="inner">
@@ -41,7 +41,7 @@
                                 </header>
                                 <p>{{ .Description }}</p>
                                 <ul class="actions">
-                                    <li><a href="{{ .Permalink }}" class="button">Learn more</a></li>
+                                    <li><a href="{{ .Permalink }}" class="button">Saiba mais</a></li>
                                 </ul>
                             </div>
                         </div>
