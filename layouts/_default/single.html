@@ -12,6 +12,23 @@
         {{ "<!-- Main -->" | safeHTML }}
             <div id="main" class="alt">
 
+                <!-- Ads -->
+
+                {{ if and .Site.Params.Ads.enable .Site.Params.Ads.singlePageHeaderAds.enable }}
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ .Site.Params.Ads.client }}"
+                     crossorigin="anonymous"></script>
+                <!-- Single Page Header Ads -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="{{ .Site.Params.Ads.client }}"
+                     data-ad-slot="{{ .Site.Params.Ads.singlePageHeaderAds.slot }}"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+                {{ end }}
+
                 <!-- One -->
                     <section id="one">
                         <div class="inner">
@@ -23,7 +40,7 @@
                         </div>
                     </section>
             {{ "<!-- Disqus Inject -->" | safeHTML }}
-                {{ if .Site.DisqusShortname }}
+                {{ if and (.Site.DisqusShortname) (not  .Params.disableComments) }}
                   {{ partial "disqus.html" . }}
                 {{ end }}
             </div>
