@@ -1,0 +1,12 @@
+<section>
+    <div class="inner" id="hyvor-talk-view"></div>
+    <script type="text/javascript">
+        var HYVOR_TALK_WEBSITE = {{ .Site.Params.hyvorTalkID }};
+        var HYVOR_TALK_CONFIG = {
+            url: '{{ . | absURL }}',
+            id: '{{ .File.UniqueID }}'
+        };
+    </script>
+    <script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
+    <noscript>Please enable JavaScript to view the comments.</noscript>
+</section>

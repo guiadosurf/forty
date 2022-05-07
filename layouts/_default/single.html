@@ -39,9 +39,9 @@
                             {{ .Content }}
                         </div>
                     </section>
-            {{ "<!-- Disqus Inject -->" | safeHTML }}
-                {{ if and (.Site.DisqusShortname) (not  .Params.disableComments) }}
-                  {{ partial "disqus.html" . }}
+            {{ "<!-- Hyvor Inject -->" | safeHTML }}
+                {{ if and (.Site.Params.hyvorTalkID) (not  .Params.disableComments) }}
+                  {{ partial "hyvor.html" . }}
                 {{ end }}
             </div>
             
