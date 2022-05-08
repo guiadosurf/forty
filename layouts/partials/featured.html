@@ -1,5 +1,11 @@
 {{ "<!-- Featured -->" | safeHTML}}
   <section id="featured" class="glide">
+    <header class="section-header">
+      <img src="{{ .Site.Params.baseURL }}/img/{{ .Site.Params.Navigation.logo }}" alt="" />
+      <div class="section-title-container">
+        <h1>{{ .Site.Params.Featured.title }}</h1>
+      </div>
+    </header>
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
         {{ range .Site.Params.Featured.showcase }}
