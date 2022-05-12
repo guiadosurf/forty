@@ -18,9 +18,10 @@
 					{{ partial "tile.html" . }}
 				{{ end }}
 
-        {{ if .Site.Params.Featured }}
-          {{ partial "featured.html" . }}
-        {{ end }}
+        {{ "<!-- Spotlights -->" | safeHTML }}
+          {{ if .Site.Params.Spotlights.enable }}
+            {{ partial "related.html" (dict "related" .Site.Params.Spotlights "ctx" .) }}
+          {{ end }}
 
 				{{ if .Site.Params.Two.enable }}
 					{{ partial "two.html" . }}

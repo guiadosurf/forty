@@ -1,0 +1,17 @@
+.glide__slide > .spotlights > section {
+  background-color: #4ba07c !important;
+}
+
+.glide__slide {
+  padding: 0;
+}
+
+.glide__slide .image img{
+  object-fit:cover;
+  width:500px;
+  height:500px;
+}
+
+#featured > .section-header {
+  background-color: #388665 !important;
+}

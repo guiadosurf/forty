@@ -41,7 +41,9 @@
                         </div>
                     </section>
             {{ "<!-- Related -->" | safeHTML }}
-              {{ partial "related.html" . }}
+              {{ if isset .Params "related" }}
+                {{ partial "related.html" (dict "related" .Params.related "ctx" .) }}
+              {{ end }}
 
             {{ "<!-- Hyvor Inject -->" | safeHTML }}
                 {{ if and (.Site.Params.hyvorTalkID) (not  .Params.disableComments) }}

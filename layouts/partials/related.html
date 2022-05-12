@@ -1,16 +1,19 @@
 {{ "<!-- Related -->" | safeHTML}}
-  {{ with .Params.related }}
+  {{ $ctx := .ctx }}
+  {{ $related := .related }}
+
+  {{ with $related }}
     <section id="related">
         <div class="inner">
         <header class="section-header">
-          <img src="{{ $.Site.Params.baseURL }}/img/{{ $.Site.Params.Navigation.logo }}" alt="" />
+          <img src="{{ $ctx.Site.Params.baseURL }}/img/{{ $ctx.Site.Params.Navigation.logo }}" alt="" />
           <div class="section-title-container">
             <h1>{{ .text }}</h1>
           </div>
         </header>
           <div class="cards">
             {{ range .links }}
-              {{ with $.Site.GetPage "page" . }} 
+              {{ with $ctx.Site.GetPage "page" . }} 
                 <a class="silent" href="{{ .Permalink }}">
                   <article class="card">
                     <div class="card-image">
