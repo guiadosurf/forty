@@ -36,7 +36,10 @@
                             <header class="major">
                                 <h1>{{ .Title}}</h1>
                             </header>
-                            <span class="image main"><img src="{{ .Page.RelPermalink }}img/banner.jpg" alt="" /></span>
+
+                            {{ "<!-- Gallery -->" | safeHTML }}
+                            {{ partial "gallery.html" . }}
+
                             {{ .Content }}
                         </div>
                     </section>
