@@ -40,16 +40,20 @@
                             {{ .Content }}
                         </div>
                     </section>
+            {{ "<!-- Related -->" | safeHTML }}
+              {{ partial "related.html" . }}
+
             {{ "<!-- Hyvor Inject -->" | safeHTML }}
                 {{ if and (.Site.Params.hyvorTalkID) (not  .Params.disableComments) }}
                   {{ partial "hyvor.html" . }}
                 {{ end }}
             </div>
-            
+
         {{ "<!-- Footer -->" | safeHTML}}
-            {{ if .Site.Params.footer.enable }}
-                {{ partial "footer.html" . }}
-            {{ end }}
+          {{ if .Site.Params.footer.enable }}
+            {{ partial "footer.html" . }}
+          {{ end }}
+
         </div>
 
     {{ "<!-- Scripts -->" | safeHTML}}

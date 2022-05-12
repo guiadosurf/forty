@@ -1,0 +1,35 @@
+{{ "<!-- Related -->" | safeHTML}}
+  {{ with .Params.related }}
+    <section id="related">
+        <div class="inner">
+        <header class="section-header">
+          <img src="{{ $.Site.Params.baseURL }}/img/{{ $.Site.Params.Navigation.logo }}" alt="" />
+          <div class="section-title-container">
+            <h1>{{ .text }}</h1>
+          </div>
+        </header>
+          <div class="cards">
+            {{ range .links }}
+              {{ with $.Site.GetPage "page" . }} 
+                <a class="silent" href="{{ .Permalink }}">
+                  <article class="card">
+                    <div class="card-image">
+                      <figure class="image">
+                        <img src="{{ .Permalink }}/img/banner.jpg">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="content">
+                        <p class="content-type">{{ .Type }}</p>
+                        <h3 class="content-title">{{ .Title }}</h3>
+                        <p class="content-description">{{ .Description | truncate 70 }}</p>
+                      </div><!-- .content -->
+                    </div><!-- .card-content -->
+                  </article><!-- .card -->
+                </a>
+              {{ end }}
+            {{ end }}
+          </div><!-- .cards -->
+        </div><!-- .inner -->
+    </section>
+  {{ end }}

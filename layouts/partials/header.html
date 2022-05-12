@@ -8,6 +8,7 @@
 	<title>{{ .Title }}{{ if not .IsHome }} &middot; {{ .Site.Title }}{{ end }}</title>
 	{{ "<!-- Stylesheets -->" | safeHTML }}
 	<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="{{ "css/related.css" | absURL}}"/>
 	<link rel="stylesheet" href="{{ "css/search.css" | absURL}}"/>
 	<link rel="stylesheet" href="{{ "css/main.css" | absURL}}"/>
 	<!--[if lte IE 9]><link rel="stylesheet" href="{{ "css/ie9.css" }}"/><![endif]-->
