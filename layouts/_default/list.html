@@ -18,6 +18,10 @@
                         <span class="image">
                             <img src="{{ .Page.RelPermalink }}img/banner.webp" alt="" />
                         </span>
+
+                        {{ "<!-- Parent Tree -->" | safeHTML }}
+                        {{ partial "parent_tree.html" . }}
+
                         <header class="major">
                             <h1>{{ .Title }}</h1>
                         </header>

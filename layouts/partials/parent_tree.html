@@ -1,0 +1,21 @@
+{{ "<!-- Parent Tree -->" | safeHTML }}
+<section id="parent-tree">
+  <ul class="parent-links">
+    <li class="parent-link">
+      <a href="{{ .Site.BaseURL }}" alt="Início">Início</a>
+    </li>
+    {{ $dir := path.Dir (path.Clean .RelPermalink) }}
+    {{ $splitted_path := split (trim $dir "/") "/" }}
+    {{ $link := "/" }}
+    {{ range $splitted_path }}
+      {{ $link = path.Join $link . }}
+      {{ $page := $.GetPage $link }}
+      <li class="parent-link">
+        <a href="{{ $page.Permalink }}" alt="Ir para {{ $page.Title }}">{{ $page.Title }}</a>
+      </li>
+    {{ end }}
+    <li class="self-title">
+      <span class="self-title-text">{{ .Title }}</span>
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,18 @@
+ul.parent-links {
+  padding-left: 0;
+}
+
+ul.parent-links > li {
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.parent-links li:not(:first-child)::before {
+  content: '»';
+  left: 0;
+  margin-right: 5px;
+}
+
+ul.parent-links > li > .self-title-text {
+  font-weight: bold;
+}

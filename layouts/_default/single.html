@@ -33,6 +33,9 @@
                 <!-- One -->
                     <section id="one">
                         <div class="inner">
+                            {{ "<!-- Parent Tree -->" | safeHTML }}
+                            {{ partial "parent_tree.html" . }}
+
                             <header class="major">
                                 <h1>{{ .Title}}</h1>
                             </header>
