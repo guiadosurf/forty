@@ -2,10 +2,6 @@
   background-color: rgb(36, 36, 47, 0.6);
 }
 
-#related .inner {
-  padding-top: 0 !important;
-}
-
 a.silent {
   color: rgb(36, 36, 47);
   text-decoration: none !important;
